@@ -1,18 +1,22 @@
 import React from 'react';
 
+import SunImg from "../../resources/images/sun.png";
+
 export default class Weather extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        <div className="weather-data">
-            <div className="location">Location</div>
-            <div className="inner-section">
-                <div className="image">IMAGE</div>
-                <div className="temp">10</div>
+        return (
+            <div className="weather-data">
+                <div className="location">Location</div>
+                <div className="inner-section">
+                    <div className="image"><img src={SunImg} alt='sun graphic'></img></div>
+                    <div className="temp">10°</div>
+                </div>
+                <div className="condition">Sunny</div>
             </div>
-            <div className="condition">Sunny</div>
-        </div>
+        );
     }
 }

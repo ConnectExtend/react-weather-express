@@ -10,14 +10,13 @@ import axios from 'axios';
 
 const WEATHER_KEY = 'c61d957551484d38859202359192601';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cityName: 'Chicago',
       forecastDays: 5
-    }
+    };
   }
 
   componentDidMount() {
@@ -58,7 +57,7 @@ class App extends Component {
             />
           </div>
           <div className="bottom-section">
-            <Bottom Section />
+            <BottomSection />
           </div>
         </div>
       </div>

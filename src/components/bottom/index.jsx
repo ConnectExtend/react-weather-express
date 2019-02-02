@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.scss';
+
 export default class BottomSection extends React.Component {
     constructor(props) {
         super(props);
@@ -9,6 +11,7 @@ export default class BottomSection extends React.Component {
 
     render() {
         // 
-        return <div>BOTTOM SECTION</div>;
+        return <div className="bottom-content"></div>;
+
         }
     }

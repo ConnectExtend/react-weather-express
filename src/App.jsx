@@ -19,7 +19,7 @@ class App extends Component {
       isLoading: true
     };
   }
-// making only one request to API which will be passed to top section and bottom section
+  // making only one request to API which will be passed to top section and bottom section
   componentDidMount() {
     const { cityName, forecastDays } = this.state;
 
@@ -32,34 +32,37 @@ class App extends Component {
       .then(data => {
         this.setState({
           isLoading: false,
-          isDay: data.current.is_day, 
-          iconURL: data.current.condition.icon, 
-          temp_f: data.current.temp_f, 
-          condition: data.current.condition.text 
+          isDay: data.current.is_day,
+          iconURL: data.current.condition.icon,
+          temp_f: data.current.temp_f,
+          condition: data.current.condition.text
         });
       })
       .catch(err => {
-        if (err) 
+        if (err)
           console.error('Cannot fetch Weather Data from API, ', err);
       });
   }
 
   render() {
-    const { cityName, isDay, iconURL, temp_f, condition } = this.state;
+    const { isLoading, cityName, isDay, iconURL, temp_f, condition } = this.state;
 
 
     return (
       <div className="app-container">
         <div className="main-container">
-          <div className="top-section">
-            <TopSection 
-              location={cityName}
-              isDay={isDay}
-              iconURL={iconURL}
-              temp_f={temp_f}
-              condition={condition} 
-            />
-          </div>
+          {isLoading && <h3>Weather Loading...</h3>}
+          {!isLoading && (
+            <div className="top-section">
+              <TopSection
+                location={cityName}
+                isDay={isDay}
+                iconURL={iconURL}
+                temp_f={temp_f}
+                condition={condition}
+              />
+            </div>
+          )}
           <div className="bottom-section">
             <BottomSection />
           </div>

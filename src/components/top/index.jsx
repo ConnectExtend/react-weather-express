@@ -7,7 +7,6 @@ import Weather from './weather.jsx';
 export default class TopSection extends React.Component {
     constructor(props) {
         super(props);
-        // 
         this.state = { };
     }
 
@@ -15,7 +14,7 @@ export default class TopSection extends React.Component {
         return (
         <div className='top-content'>
             <div className='title'>Weather Express</div>
-            <Weather />
+            <Weather { ...this.props } />
             <button className='btn-select-location'>Select Location</button>
         </div>
         );

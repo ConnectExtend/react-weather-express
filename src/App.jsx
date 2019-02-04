@@ -15,10 +15,11 @@ class App extends Component {
     super(props);
     this.state = {
       cityName: 'Chicago',
-      forecastDays: 5
+      forecastDays: 5,
+      isLoading: true
     };
   }
-
+// making only one request to API which will be passed to top section and bottom section
   componentDidMount() {
     const { cityName, forecastDays } = this.state;
 
@@ -26,22 +27,25 @@ class App extends Component {
     axios
       .get(URL)
       .then(res => {
-        console.log('DATA: ', res);
-        /** 
-         * return res.data;
-         * }).then(data => {
-         * this.setState({ isDay: data.current.is_day, iconURL: data.current.condition.icon, temp_f: data.current.temp_f, text: data.current.condition.text });
-         * })  
-         */
+        return res.data;
+      })
+      .then(data => {
+        this.setState({
+          isLoading: false,
+          isDay: data.current.is_day, 
+          iconURL: data.current.condition.icon, 
+          temp_f: data.current.temp_f, 
+          condition: data.current.condition.text 
+        });
       })
       .catch(err => {
-        if (err) console.error('Cannot fetch Weather Data from API, ', err);
+        if (err) 
+          console.error('Cannot fetch Weather Data from API, ', err);
       });
   }
 
-
   render() {
-    const { cityName, isDay, iconURL, temp_f, text } = this.state;
+    const { cityName, isDay, iconURL, temp_f, condition } = this.state;
 
 
     return (
@@ -53,7 +57,7 @@ class App extends Component {
               isDay={isDay}
               iconURL={iconURL}
               temp_f={temp_f}
-              text={text} 
+              condition={condition} 
             />
           </div>
           <div className="bottom-section">

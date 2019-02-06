@@ -4,8 +4,6 @@ import './styles.scss';
 
 import Weather from './weather.jsx';
 
-import { Manager, Reference, Popper } from 'react-popper';
-
 export default class TopSection extends React.Component {
     constructor(props) {
         super(props);
@@ -22,33 +20,25 @@ export default class TopSection extends React.Component {
 
     render() {
         const { isSelectLocationOpen } = this.state;
-        
+
         return (
-            <div className='top-content'>
-                <h1 className='title'>Weather Express</h1>
-                <Weather {...this.props} />
-                <Manager>
-                    <Reference>
-                        {({ ref }) => (
-                            <button className='btn-select-location' 
-                            ref={ref}
-                            onClick={this.onToggleSelectLocation.bind(this)}
-                            >
-                                Select Location
+            <main className='top-content'>
+                <section>
+                    <h1 className='title'>Weather Express</h1>
+                    <Weather {...this.props} />
+                </section>
+                <section>
+                    <form class="InputAddOn" action="dummy_page.php">
+                        <label for='location-search' class='InputAddOn-label' aria-label='Enter location information'>Enter city name, zip code or postal code.</label>
+                        <div class='search-bar'>
+                            <input id='location-search' class="InputAddOn-field" type='text'></input>
+                            <button class="InputAddOn-icon" type='submit'>
+                                <span class="search-icon"><i class="fas fa-search"></i></span>
                             </button>
-                        )}
-                    </Reference>
-                    <Popper placement="top">
-                        {({ ref, style, placement, arrowProps }) => ( 
-                            isSelectLocationOpen &&
-                            <div ref={ref} style={style} data-placement={placement}>
-                                Popper element
-                            <div ref={arrowProps.ref} style={arrowProps.style} />
-                            </div>
-                        )}
-                    </Popper>
-                </Manager>
-            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
         );
     }
 }

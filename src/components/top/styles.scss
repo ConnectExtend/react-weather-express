@@ -11,7 +11,7 @@
         font-family: 'Raleway', sans-serif;
         font-size: 1.6rem;
         letter-spacing: 0.1rem;
-        color: #fff;
+        color: #fff100;
         margin: 0.5rem 0;
     }
 }
@@ -38,24 +38,72 @@
         margin: 0;
 
         .temp {
-        font-size: 3.3em;
+        font-size: 3.2em;
         margin-left: 10px;
         }
     }
 }
 
-.btn-select-location {
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    margin: 15px 0;
-    padding: 5px 25px;
-    background-color: #bbd4d8;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;    
-    color: #222;
-    cursor: pointer;
+// .btn-select-location {
+//     border: 1px solid #ddd;
+//     border-radius: 2px;
+//     margin: 15px 0;
+//     padding: 5px 25px;
+//     background-color: #bbd4d8;
+//     font-size: 20px;
+//     font-family: Arial, Helvetica, sans-serif;    
+//     color: #222;
+//     cursor: pointer;
 
-    &:focus {
-        outline: red;
+//     &:focus {
+//         outline: red;
+//     }
+// }
+
+/*
+* Location Search Input 
+*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    // margin: 15px 30px;
+  }
+  
+  .InputAddOn-label {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    margin: 0.5rem 0;
+  }
+  
+  .InputAddOn-field {
+    flex-basis: 86%;
+    &:not(:last-child) {
+      border-right: 0;
     }
-}
+  }
+  
+  .InputAddOn-icon {
+    background-color: rgba(192, 192, 192, 0.4);
+  }
+  
+  .InputAddOn-field, .InputAddOn-icon {
+    border: 1px solid rgba(155, 135, 125, 0.55);
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .InputAddOn-field, .InputAddOn-icon:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .InputAddOn-field:last-child, .InputAddOn-icon:last-child {
+    border-radius: 0 3px 3px 0;
+  }

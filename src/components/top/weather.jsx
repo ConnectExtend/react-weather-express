@@ -8,7 +8,7 @@ export default class Weather extends React.Component {
     }
 
     render() {
-        const { location, temp_f, condition, iconURL } = this.props;
+        const { location, condition, iconURL, temp_f } = this.props;
 
         return (
             <div className="weather-data">

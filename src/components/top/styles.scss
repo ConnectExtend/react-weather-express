@@ -8,35 +8,38 @@
     width: 100%;
 
     .title {
-        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
         color: #fff;
-        margin: .8em 0;
+        margin: 0.5rem 0;
     }
 }
 
 .weather-data {
-    color: #fff;
-    
+    color: #fff;    
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .location,
-    .condition {
-        font-size: 15px;
+    .location {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
     }
 
-    .location {
-        margin-bottom: 20px;
+    .condition {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
     .inner-section {
         display: flex;
         flex-direction: row;
-        margin-bottom: -7px;
+        margin: 0;
 
         .temp {
         font-size: 3.3em;
+        margin-left: 10px;
         }
     }
 }

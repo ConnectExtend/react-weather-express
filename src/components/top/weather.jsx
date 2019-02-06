@@ -13,11 +13,11 @@ export default class Weather extends React.Component {
         return (
             <div className="weather-data">
                 <div className="location">{location}</div>
+                <div className="condition">{condition}</div>
                 <div className="inner-section">
                     <div className="image"><img src={iconURL} alt='' /></div>
                     <div className="temp">{temp_f}°<small>F</small></div>
                 </div>
-                <div className="condition">{condition}</div>
             </div>
         );
     }

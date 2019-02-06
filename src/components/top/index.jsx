@@ -25,7 +25,7 @@ export default class TopSection extends React.Component {
         
         return (
             <div className='top-content'>
-                <div className='title'>Weather Express</div>
+                <h1 className='title'>Weather Express</h1>
                 <Weather {...this.props} />
                 <Manager>
                     <Reference>

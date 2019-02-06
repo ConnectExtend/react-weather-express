@@ -7,6 +7,7 @@ body,
 #root {
     width: 100%;
     height: 100%;
+    font-size: 16px;
 }
 
 .app-container {
@@ -19,7 +20,7 @@ body,
 
     .main-container {
         min-width: 600px;
-        height: 300px;
+        height: 400px;
         border: 1px solid #999;
         border-radius: 3px;
         display: flex;

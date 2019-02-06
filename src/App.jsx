@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityName: 'Beloit',
+      cityName: 'Tenerife',
       forecastDays: 5,
       isLoading: true
     };

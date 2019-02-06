@@ -2,6 +2,9 @@ import React from 'react';
 
 import './styles.scss';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import Weather from './weather.jsx';
 
 export default class TopSection extends React.Component {
@@ -33,7 +36,9 @@ export default class TopSection extends React.Component {
                         <div class='search-bar'>
                             <input id='location-search' class="InputAddOn-field" type='text'></input>
                             <button class="InputAddOn-icon" type='submit'>
-                                <span class="search-icon"><i class="fas fa-search"></i></span>
+                                <span class="search-icon">
+                                    <FontAwesomeIcon icon={ faSearch } size="2x" />
+                                </span>
                             </button>
                         </div>
                     </form>

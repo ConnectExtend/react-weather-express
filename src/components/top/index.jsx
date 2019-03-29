@@ -32,7 +32,7 @@ export default class TopSection extends React.Component {
                 </section>
                 <section>
                     <form class="InputAddOn" action="dummy_page.php">
-                        <label for='location-search' class='InputAddOn-label' aria-label='Enter location information'>Enter city name, zip code or postal code.</label>
+                        <label for='location-search' class='InputAddOn-label' aria-label='Enter location information'>Enter city name, zip code or postal code</label>
                         <div class='search-bar'>
                             <input id='location-search' class="InputAddOn-field" type='text'></input>
                             <button class="InputAddOn-icon" type='submit'>
